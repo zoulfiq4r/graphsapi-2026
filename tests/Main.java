@@ -1,10 +1,7 @@
-
 import m1graphs2026.*;
 
 import java.util.*;
 
-import m1graphs2026.Graph;
-import m1graphs2026.Node;
 import utils.GraphViz;
 
 public class Main {
@@ -44,6 +41,17 @@ public class Main {
         set.add(node1);
         set.add(sameNode);
         assert set.size() == 1;
+
+        // Edge checks
+        Edge e1 = new Edge(node1, node2);
+        Edge e2 = new Edge(node1, node2, 1000);
+        Edge e3 = new Edge(node1, node2, 1000);
+        assert e2.equals(e3) && e2.hashCode() == e3.hashCode();
+        assert !e1.equals(e2);
+        assert e1.compareTo(e2) < 0;
+        assert e1.toString().equals("1->2");
+        assert new Edge(1, 1, firstGraph).isSelfLoop();
+        assert e2.getSymmetric().from().equals(node2);
 
         System.out.println("All Node tests passed.");
 
