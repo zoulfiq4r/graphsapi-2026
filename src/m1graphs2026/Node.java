@@ -128,4 +128,15 @@ package m1graphs2026;
          return Integer.compare(id, other.id);
       }
       //——————
+
+      /**
+       * Returns the node identifier as text.
+       *
+       * @return this node's identifier
+       */
+      @Override
+      public String toString() {
+         return Integer.toString(id);
+      }
+      //——————
    }
