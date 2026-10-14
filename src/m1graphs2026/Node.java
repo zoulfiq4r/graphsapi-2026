@@ -1,4 +1,4 @@
- package m1graphs2026;
+package m1graphs2026;
 
    /**
     * Represents one node belonging to a graph.
